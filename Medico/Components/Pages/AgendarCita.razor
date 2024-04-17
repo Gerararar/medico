@@ -1,0 +1,20 @@
+﻿@using Medico.Models
+@using Medico.Services
+@page "/select"
+@rendermode InteractiveServer
+@inject ICitas iCitas
+<div class="card">
+    <div class="card-body">
+        <select>
+            @foreach(var paciente in pacientes){
+                <option value="@paciente.ID">@paciente.Nombre @paciente.Apellido1</option>
+            }
+        </select>
+    </div>
+</div>
+@code {
+    protected override async Task OnInitializedAsync() {
+        List<Paciente> pacientes = new List<Pacientes>();
+        pacientes=await iCitas.Pacientes()
+    }
+}

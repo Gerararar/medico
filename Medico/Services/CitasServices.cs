@@ -9,8 +9,16 @@ namespace Medico.Services
         public async Task<List<Cita>> ObtenerCitashoy()
         {
             List<Cita> citas = new List<Cita>();
-            citas= await context.Citas.ToListAsync();
+            citas= await context.Citas.Include(p=>p.Paciente).OrderByDescending(f=>f.Fecha).ToListAsync();
             return citas;
+        }
+
+        public async Task<List<Paciente>> Pacientes()
+        {
+            List<Paciente> pacientes = new List<Paciente>();
+            pacientes = await context.Pacientes.ToListAsync();
+            return pacientes;
+
         }
     }
 }

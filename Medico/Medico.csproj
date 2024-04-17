@@ -8,12 +8,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Components\Pages\AgendarCita.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Medico.Client\Medico.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Components\Pages\AgendarCita.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Components\Pages\AgendarCita.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Components\Pages\AgendarCita.razor" />
   </ItemGroup>
 
 </Project>
